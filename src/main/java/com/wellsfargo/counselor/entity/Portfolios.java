@@ -25,7 +25,8 @@ public class Portfolios {
 
     protected Portfolios() {}
 
-    public Portfolios(String name, String type) {
+    public Portfolios(Client client, String name, String type) {
+        this.client = client;
         this.name = name;
         this.type = type;
     }
@@ -33,11 +34,15 @@ public class Portfolios {
     public Long getPortfolioId() {
         return portfolioId;
     }
-    public Client getClientId() {
-        return client;
-    }
     public Security getSecurity() {
         return security;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+    public void seClient(Client client) {
+        this.client = client;
     }
 
 

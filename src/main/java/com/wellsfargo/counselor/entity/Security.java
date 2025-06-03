@@ -23,15 +23,16 @@ public class Security {
     private String purchase_date;
 
     @Column(nullable = false)
-    private String purchase_price;
+    private float purchase_price;
 
     @Column(nullable = false)
-    private String quantity;
+    private float quantity;
 
 
     protected Security() {}
 
-    public Security(String name, String category, String purchaseDate, String purchasePrice, String quantity) {
+    public Security(Portfolios portfolio, String name, String category, String purchaseDate, float purchasePrice, float quantity) {
+        this.portfolio = portfolio;
         this.name = name;
         this.category = category;
         this.purchase_date = purchaseDate;
@@ -42,8 +43,12 @@ public class Security {
     public Long getSecurityId() {
         return securityId;
     }
-    public Portfolios getPortfolioId() {
+
+    public Portfolios getPortfolio() {
         return portfolio;
+    }
+    public void setPortfolio(Portfolios portfolio) {
+        this.portfolio = portfolio;
     }
 
 
@@ -68,17 +73,17 @@ public class Security {
         this.purchase_date = purchaseDate;
     }
 
-    public String getPurchasePrice() {
+    public float getPurchasePrice() {
         return purchase_price;
     }
-    public void setPurchasePrice(String purchasePrice) {
+    public void setPurchasePrice(float purchasePrice) {
         this.purchase_price = purchasePrice;
     }
 
-    public String getQuantity() {
+    public float getQuantity() {
         return quantity;
     }
-    public void setQuantity(String quantity) {
+    public void setQuantity(float quantity) {
         this.quantity = quantity;
     }
 

@@ -33,7 +33,8 @@ public class Client {
     protected Client() {}
 
 
-    public Client(String name, String email, String address, String phone) {
+    public Client(Advisor advisor, String name, String email, String address, String phone) {
+        this.advisor = advisor;
         this.name = name;
         this.address = email;
         this.phone = address;
@@ -44,13 +45,17 @@ public class Client {
     public Long getClientId() {
         return clientId;
     }
-    public Advisor getAdvisorId() {
-        return advisor;
-    }
     public Portfolios getPortfolioId() {
         return portfolio;
     }
 
+
+    public Advisor getAdvisor() {
+        return advisor;
+    }
+    public void setAdvisor(Advisor advisor) {
+        this.advisor = advisor;
+    }
 
     public String getName() {
         return name;
